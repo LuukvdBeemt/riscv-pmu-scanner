@@ -1,4 +1,4 @@
-*.csv
+*.png
 *.xlsx
-/outputs
 .DS_Store
+/analysis/out/
