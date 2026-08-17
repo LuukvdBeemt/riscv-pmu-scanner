@@ -104,8 +104,8 @@ def _palette():
 
 TIER_SHORT = {TR.TIER_A: "A", TR.TIER_B: "B", TR.TIER_C: "C", TR.TIER_D: "D"}
 TIER_LABEL = {TR.TIER_A: "A: breaks an invariant",
-              TR.TIER_B: "B: out of range, no twin",
-              TR.TIER_C: "C: novel, in range",
+              TR.TIER_B: "B: no twin, out of range",
+              TR.TIER_C: "C: no twin, in range",
               TR.TIER_D: "D: exact documented twin"}
 
 
