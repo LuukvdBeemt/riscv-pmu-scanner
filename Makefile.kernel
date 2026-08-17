@@ -1,0 +1,21 @@
+obj-m += pmu_module.o
+
+all:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+
+clean:
+	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+load:
+	sudo insmod pmu_module.ko
+
+unload:
+	sudo rmmod pmu_module
+
+test: pmu_test
+	./pmu_test
+
+pmu_test: pmu_test.c
+	gcc -o pmu_test pmu_test.c
+
+.PHONY: all clean load unload test

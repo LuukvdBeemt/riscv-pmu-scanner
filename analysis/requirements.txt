@@ -1,0 +1,25 @@
+# Analysis dependencies for the RISC-V undocumented-instruction scanner.
+#
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Verified on Python 3.9.6 All eight scripts parse under a 3.9 feature target;
+# the pins below are the last releases of each package supporting it, so
+# raising the Python version means raising these too.
+
+numpy==2.0.2
+pandas==2.3.3
+matplotlib==3.9.4
+scipy==1.13.1
+
+# RandomForestClassifier (signature_classify.py, classify_instructions.py)
+# and NearestNeighbors (triage.py).
+scikit-learn==1.6.1
+
+# Optional. classify_instructions.py attaches a human-readable mnemonic to
+# each encoding when Capstone is importable, and silently skips it otherwise.
+# The mnemonic is cosmetic: it never feeds a label, a fold or a metric, and
+# every reported number is identical with Capstone absent. Uncomment for the
+# readable column in labeled_encodings.csv.
+#
+# capstone==5.0.1
